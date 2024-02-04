@@ -15,17 +15,54 @@
         #f9f871
     );
 }
-/* Add these styles for the background animation */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
+/* Add styles for the shape-changing blobs animation */
+@keyframes moveBlob1 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(100px, 100px) scale(2);
     }
     50% {
-        background-position: 100% 50%;
+        transform: translate(300px, 0) scale(1);
     }
-    100% {
-        background-position: 0% 50%;
+    75% {
+        transform: translate(100px, -100px) scale(2);
     }
+}
+
+@keyframes moveBlob2 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(-100px, -100px) scale(2);
+    }
+    50% {
+        transform: translate(-300px, 0) scale(1);
+    }
+    75% {
+        transform: translate(-100px, 100px) scale(2);
+    }
+}
+
+.bg-img::before,
+.bg-img::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: var(--color);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.bg-img::before {
+    animation: moveBlob1 30s ease-in-out infinite;
+}
+
+.bg-img::after {
+    animation: moveBlob2 30s ease-in-out infinite;
 }
 
 .bg-img {
@@ -36,10 +73,8 @@
     justify-content: center;
     min-height: 100vh;
     background-color: #1e1e2e;
-    /* Add animation styles */
-    animation: gradientAnimation 10s linear infinite;
-    background-size: 200% 200%;
-    background-image: var(--color);
+    /* Set position:relative for the pseudo-elements to be positioned relative to .bg-img */
+    position: relative;
 }
 
 .bg-img h1{
@@ -47,6 +82,7 @@
     font-size: 10vw;
     font-weight: bold;
     letter-spacing: 3px;
+    z-index: 1;
 }
 .search-bar{
     width: 90%;
@@ -57,6 +93,7 @@
     border-radius: 5rem;
     padding: 10px 10px;
     backdrop-filter: blur(4px) saturate(150%);
+    z-index: 1;
 }
 .search-bar input{
     background: transparent;
@@ -87,15 +124,18 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    z-index: 1;
 }
 #hello img{
     display: block;
     margin: auto;
     max-height: 20vh;
+    z-index: 1;
 }
 #hello h2{
     color: #fff;
     font-size: 3vw;
+    z-index: 1;
 }
 
 /* Add styles for the modal */
