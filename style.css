@@ -139,6 +139,9 @@
 }
 
 /* Add styles for the modal */
+#usernameModal {
+    z-index: 999;
+}
 .modal {
     display: none;
     position: fixed;
