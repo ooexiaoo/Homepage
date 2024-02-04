@@ -78,3 +78,66 @@
     color: #f38ba8;
     font-size: 3vw;
 }
+
+/* Add styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e2e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .close {
+    color: #f38ba8;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #fff;
+  }
+  
+  #name {
+    color: #fff;
+    font-weight: 900;
+  }
+
+ #usr-btn {
+    background-color: #f38ba8;
+    color: #fff;
+    border: none;
+    margin: 5px;
+    padding: 5px 0;
+    border-radius: 2rem;
+    cursor: pointer;
+ }
+
+ #usernameInput {
+    background-color: #f38ba8;
+    color: #fff;
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 2rem;
+    text-align: center;
+ }
+
+ .search {
+    text-align: center;
+ }

@@ -13,12 +13,23 @@
         <div id="hello"></div>
         <h1 id="time"></h1>
         <form action="https://duckduckgo.com/?q=" class="search-bar">
-            <input type="text" placeholder="Search Here" name="q">
+            <input class="search" type="text" placeholder="Search Here" name="q">
             <button type="submit">
                 <img src="/icons8-search.svg">
             </button>
         </form>
     </div>
+
+    <!-- Add a modal popup for entering the user's name -->
+<div id="usernameModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <label id="name" for="username">Enter your name:</label>
+      <input type="text" id="usernameInput">
+      <button id="usr-btn" onclick="saveUsername()">Save</button>
+    </div>
+  </div>  
+
     <script src="main.js">
     </script>
 </body>
