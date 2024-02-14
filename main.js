@@ -8,7 +8,6 @@ setInterval(() => {
     // Add leading zeros to minutes and seconds if needed
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
-
     time.innerHTML = `${hours}:${minutes}:${seconds}`;
 }, 1000);
 
